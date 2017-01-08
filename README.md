@@ -1,6 +1,4 @@
-# Project Flynn AI
-
-## PiClock
+## Project Flynn AI
 
 ### Clock and Weather Module Build
 
