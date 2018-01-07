@@ -1,4 +1,3 @@
-# http://stackoverflow.com/questions/12507274/how-to-get-bounds-of-a-google-static-map
 import math
 MERCATOR_RANGE = 256
 
