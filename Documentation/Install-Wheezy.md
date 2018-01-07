@@ -1,7 +1,7 @@
 # Install Instructions for PiClock
-## For Raspbian Wheezy
+## For Raspbian Stretch
 
-PiClock and this install guide are based on Raspian Wheezy 2015-05-05 image
+PiClock and this install guide are based on Raspian Stretch 2017-11-29 image
 released on https://www.raspberrypi.org/downloads/ It will work with many
 raspbian versions, but you may have to add more packages, etc.  That exercise
 is left for the reader.
@@ -14,14 +14,9 @@ regarding setting up the basic hardware for your Raspi.
 ### Download Raspbian Wheezy and put it on an SD Card
 
 The image and instructions for doing this are on the following page:
-https://www.raspberrypi.org/downloads/  HOWEVER: Jessie is rolled
-into the latest download for Raspbian. and Wheezy has been removed
-from the download page. Some hardware functions (temperature, buttons, ir)
-won't work if you use Wheezy. (Yes, I need to get to updating some of
-the PiClock software to get this to work).  The last version of 
-Wheezy is archived here: 
-https://downloads.raspberrypi.org/raspbian/images/raspbian-2015-05-07/2015-05-05-raspbian-wheezy.zip
-
+https://www.raspberrypi.org/downloads/ 
+The last version of Stretch is here: 
+https://downloads.raspberrypi.org/raspbian_latest
 
 ### First boot and configure
 
@@ -49,7 +44,7 @@ all at once.
     * Overscan
       - Turn it off
     * Hostname
-      - Maybe set this to PiClock?
+      - Maybe set this to piclock?
     * SSH
       - I'd turn it on
     * Audio
@@ -104,8 +99,7 @@ go on forever)
 
 ### Get all the software that PiClock needs.
 
-Become super user! (root)  (trumpets play in the background) (ok, maybe
-just in my head)
+Become super user (root)
 ```
 sudo su -
 ```
@@ -180,7 +174,7 @@ Log into your Pi, (either on the screen or via ssh) (NOT as root)
 You'll be in the home directory of the user pi (/home/pi) by default,
 and this is where we want to be.
 ```
-git clone https://github.com/n0bel/PiClock.git
+git clone https://github.com/stacywebb/piclock.git
 ```
 Once that is done, you'll have a new directory called PiClock
 One little command is needed if you intend to use gpio buttons
@@ -239,7 +233,7 @@ sudo reboot
 ```
 
 
-### Configure the PiClock api keys
+### Configure the piclock api keys
 
 The first is to set API keys for Weather Underground and Google Maps.  
 These are both free, unless you have large volume.
