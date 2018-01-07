@@ -1,5 +1,5 @@
 # Install Instructions for PiClock 
-## For Raspbian Jessie 
+## For Raspbian Jessie or Stretch
 
 PiClock and this install guide are based on Raspian Jessie
 released on https://www.raspberrypi.org/downloads/ It will work with many
@@ -44,8 +44,8 @@ Just change the Items below.
 
 Finish and let it reboot.
 
-I've found that sometimes on reboot, Jessie doesn't go back to desktop mode.  
-If this is the case, 
+If after reboot Jessie doesn't go back to desktop mode.  
+Do the following, 
 ```
 sudo raspi-config
 ``` 
@@ -98,10 +98,9 @@ ping github.com
 (remember ctrl-c aborts programs, like breaking out of ping, which will
 go on forever)
 
-### Get all the software that PiClock needs.
+### Get all the software that piclock needs.
 
-Become super user! (root)  (trumpets play in the background) (ok, maybe
-just in my head)
+Become super user
 ```
 sudo su -
 ```
@@ -181,18 +180,18 @@ a reboot
 reboot
 ```
 
-### Get the PiClock software
+### Get the piclock software
 Log into your Pi, (either on the screen or via ssh) (NOT as root)
 You'll be in the home directory of the user pi (/home/pi) by default,
 and this is where we want to be.
 ```
-git clone https://github.com/n0bel/PiClock.git
+git clone https://github.com/stacywebb/piclock.git
 ```
 Once that is done, you'll have a new directory called PiClock
 A few commands are needed if you intend to use gpio buttons
 and the gpio-keys driver to compile it for the latest Raspbian:
 ```
-cd PiClock/Button
+cd piclock/Button
 make gpio-keys
 cd ../..
 ```
@@ -249,11 +248,11 @@ sudo reboot
 
 The first is to set API keys for Weather Underground and Google Maps.  
 These are both free, unless you have large volume.
-The PiClock usage is well below the maximums  imposed by the free api keys.
+The piclock usage is well below the maximums  imposed by the free api keys.
 
 Weather Underground api keys are created at this link: 
 http://www.wunderground.com/weather/api/ Here too, it'll ask you for an
-Application (maybe PiClock?) that you're using the api key with.
+Application (maybe piclock?) that you're using the api key with.
 
 ## Optional Google Maps API key
 
@@ -266,7 +265,7 @@ the clock often durning development.   The maps are pulled once at the start.
 If you want a key, this is how its done. Google Maps api keys are created at this link:
 https://console.developers.google.com/flows/enableapi?apiid=maps_backend&keyType=CLIENT_SIDE
 You'll require a google user and password.  After that it'll require
-you create a "project" (maybe PiClock for a project name?)
+you create a "project" (maybe piclock for a project name?)
 It will also ask about Client Ids, which you can skip (just clock ok/create).  You need to 
 then activate the key.
 
@@ -275,7 +274,7 @@ then activate the key.
 Now that you have your api keys...
 
 ```
-cd PiClock
+cd piclock
 cd Clock
 cp ApiKeys-example.py ApiKeys.py
 nano ApiKeys.py
@@ -289,12 +288,12 @@ wuapi = 'YOUR WEATHER UNDERGROUND API KEY'
 googleapi = ''  #Empty string, the key is optional -- if you pull a small volume, you'll be ok
 ```
 
-### Configure your PiClock
-here's were you tell PiClock where your weather should come from, and the
+### Configure your piclock
+here's were you tell piclock where your weather should come from, and the
 radar map centers and markers. 
 
 ```
-cd PiClock
+cd piclock
 cd Clock
 cp Config-Example.py Config.py
 nano Config.py
@@ -311,8 +310,7 @@ all that is manditory.  Further customization of the radar maps can be done in
 the Radar section.  There you can customize where your radar images are centered
 and where the markers appear on those images.  Markers are those little red
 location pointers.  Radar1 and 2 show on the first page, and 3 and 4 show on the
-second page of the display (here's a post of about that:
-https://www.facebook.com/permalink.php?story_fbid=1371576642857593&id=946361588712436&substory_index=0 )
+second page of the display.
 
 The second thing to change is your NOAA weather radio stream url.  You can
 find it here: http://www.wunderground.com/wxradio/
@@ -324,10 +322,10 @@ and gotten it running.
 You'll need to be on the desktop, in a terminal program.
 
 ```
-cd PiClock
+cd piclock
 sh startup.sh -n -s
 ```
-Your screen should be covered by the PiClock  YAY!
+Your screen should be covered by the piclock
 
 There will be some output on the terminal screen as startup.sh executes.
 If everything works, it can be ignored.  If for some reason the clock
@@ -338,7 +336,7 @@ file (Config.py)
 ### Logs
 The -s option causes no log files to be created, but
 instead logs to your terminal screen.  If -s is omitted, logs are
-created in PiClock/Clock as PyQtPiClock.[1-7].log, which can also help
+created in piclock/Clock as PyQtPiClock.[1-7].log, which can also help
 you find issues.  -s is normally omitted when started from the desktop icon
 or from crontab.  Logs are then created for debugging auto starts.
 
@@ -365,13 +363,13 @@ Use only one autostart method.
 ## Autostart Method 1
 (NOT as root)
 ```
-cd PiClock
-chmod +x PiClock.desktop
-ln PiClock.desktop ~/Desktop
+cd piclock
+chmod +x piclock.desktop
+ln piclock.desktop ~/Desktop
 mkdir ~/.config/autostart
-ln PiClock.desktop ~/.config/autostart
+ln piclock.desktop ~/.config/autostart
 ```
-This puts the a PiClock icon on your desktop.  It also runs it when
+This puts the a piclock icon on your desktop.  It also runs it when
 the desktop starts.
 
 ## Autostart Method 2
@@ -382,7 +380,7 @@ crontab -e
 ```
 and add the following line:
 ```
-@reboot sh /home/pi/PiClock/startup.sh
+@reboot sh /home/pi/piclock/startup.sh
 ```
 save the file
 and reboot to test
@@ -414,8 +412,8 @@ crontab -e
 ```
 Add lines similar to this:
 ```
-0 8 * * * sh /home/pi/PiClock/switcher.sh Config
-0 21 * * * sh /home/pi/PiClock/switcher.sh Config-Night
+0 8 * * * sh /home/pi/piclock/switcher.sh Config
+0 21 * * * sh /home/pi/piclock/switcher.sh Config-Night
 ```
 The 8 there means 8am, to switch to the normal config, and the 21 means switch to Config-Night at 9pm.
 More info on crontab can be found here: https://en.wikipedia.org/wiki/Cron
@@ -438,7 +436,7 @@ This sets the reboot to occur at 3:22am every day.   Adjust as needed.
 Since we pulled the software from github originally, it can be updated
 using git and github.
 ```
-cd PiClock
+cd piclock
 git pull
 python update.py
 ```
@@ -456,7 +454,7 @@ Backup your changes first!
 
 Also, if you're using gpio-keys, you may need to remake it:
 ```
-cd PiClock/Buttons
+cd piclock/Buttons
 rm gpio-keys
 make gpio-keys
 ```
