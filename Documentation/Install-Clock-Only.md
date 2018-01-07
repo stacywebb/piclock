@@ -25,7 +25,7 @@ git clone https://github.com/n0bel/PiClock.git
 ```
 Alternatively, you can download a zip file of the github project.
 
-https://github.com/n0bel/PiClock/archive/master.zip, then unzip it.
+https://github.com/stacywebb/piclock/archive/master.zip, then unzip it.
 
 
 ### Configure the PiClock api keys
