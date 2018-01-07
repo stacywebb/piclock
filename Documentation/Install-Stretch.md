@@ -1,7 +1,7 @@
 # Install Instructions for PiClock
 ## For Raspbian Stretch
 
-PiClock and this install guide are based on Raspian Stretch 2017-11-29 image
+piclock and this install guide are based on Raspian Stretch 2017-11-29 image
 released on https://www.raspberrypi.org/downloads/ It will work with many
 raspbian versions, but you may have to add more packages, etc.  That exercise
 is left for the reader.
@@ -169,7 +169,7 @@ a reboot
 reboot
 ```
 
-### Get the PiClock software
+### Get the piclock software
 Log into your Pi, (either on the screen or via ssh) (NOT as root)
 You'll be in the home directory of the user pi (/home/pi) by default,
 and this is where we want to be.
@@ -180,7 +180,7 @@ Once that is done, you'll have a new directory called PiClock
 One little command is needed if you intend to use gpio buttons
 and the gpio-keys driver:
 ```
-chmod +x PiClock/Button/gpio-keys
+chmod +x piclock/Button/gpio-keys
 ```
 (git hub does not allow me to set attributes on files, so we
 must do it manually)
@@ -258,7 +258,7 @@ It will also ask about Client Ids, which you can skip (just clock ok/create)
 Now that you have your api keys...
 
 ```
-cd PiClock
+cd piclock
 cd Clock
 cp ApiKeys-example.py ApiKeys.py
 nano ApiKeys.py
@@ -277,7 +277,7 @@ here's were you tell PiClock where your weather should come from, and the
 radar map centers and markers. 
 
 ```
-cd PiClock
+cd piclock
 cd Clock
 cp Config-Example.py Config.py
 nano Config.py
@@ -304,7 +304,7 @@ and gotten it running.
 ### Run it!
 
 ```
-cd PiClock
+cd piclock
 sh startup.sh
 ```
 After about 45 seconds, your screen should be covered by the PiClock  YAY!
@@ -368,7 +368,7 @@ This sets the reboot to occur at 3:22am every day.   Adjust as needed.
 Since we pulled the software from github originally, it can be updated
 using git and github.
 ```
-cd PiClock
+cd piclock
 git pull
 python update.py
 ```
