@@ -28,14 +28,14 @@ digitalcolor = "#154018"
 digitalformat = "{0:%I:%M\n%S %p}"  # The format of the time
 digitalsize = 200
 # The above example shows in this way:
-#  https://github.com/n0bel/PiClock/blob/master/Documentation/Digital%20Clock%20v1.jpg
+#  https://github.com/stacywebb/piclock/blob/master/Documentation/Digital%20Clock%20v1.jpg
 # ( specifications of the time string are documented here:
 #  https://docs.python.org/2/library/time.html#time.strftime )
 
 # digitalformat = "{0:%I:%M}"
 # digitalsize = 250
 # The above example shows in this way:
-#  https://github.com/n0bel/PiClock/blob/master/Documentation/Digital%20Clock%20v2.jpg
+#  https://github.com/stacywebb/piclock/blob/master/Documentation/Digital%20Clock%20v2.jpg
 
 
 # 0 = English, 1 = Metric
