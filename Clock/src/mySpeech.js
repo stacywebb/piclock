@@ -1,7 +1,5 @@
 /*
 *   mysSpeech.js
-*   (c) 2016 by Hermawan
-*   mySpeech may be freely distributed under the MIT license.
 */
 ;(function(global) {
   var mySpeech = function(elem) {
