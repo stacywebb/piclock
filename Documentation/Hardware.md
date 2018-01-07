@@ -20,6 +20,7 @@ This hardware guide directly supports the following
 * Raspberry Pi Revision 2 Model B
 * Raspberry Pi Model B+
 * Raspberry Pi 2 Model B
+* Raspberry Pi 3 Model B
 
 Changes can be made, alternate pins (grounds/gpios) can be used to support
 other models, but this is left as an exercise for the reader.
@@ -40,7 +41,7 @@ Raspi Header Pin           TSOP4838 Pin
 Gnd   Pin 9                  Pin 1
 GPIO3 Pin 5                  Pin 3
 ```
-![PiClock Picture](https://raw.githubusercontent.com/n0bel/PiClock/master/Documentation/tsop4838.jpg)
+![PiClock Picture](https://raw.githubusercontent.com/stacywebb/piclock/master/Documentation/tsop4838.jpg)
 
 ## Inside Temperature ( DS18B20 )
 
@@ -54,7 +55,7 @@ Gnd   Pin 9                  Pin 1
 GPIO4 Pin 7                  Pin 2
 ```
 
-![PiClock Picture](https://raw.githubusercontent.com/n0bel/PiClock/master/Documentation/ds18b20.jpg)
+![PiClock Picture](https://raw.githubusercontent.com/stacywebb/piclock/master/Documentation/ds18b20.jpg)
 
 
 ## WS2818b RGB LED AmbiLight strip
@@ -75,7 +76,7 @@ to GPIO18, header pin 12.   Note the markings on the LED strip since they all ar
 the same.
 
 
-![PiClock Picture](https://raw.githubusercontent.com/n0bel/PiClock/master/Documentation/NeoPixel.jpg)
+![PiClock Picture](https://raw.githubusercontent.com/stacywebb/piclock/master/Documentation/NeoPixel.jpg)
 
 ## GPIO Buttons
 
@@ -90,14 +91,14 @@ sudo Button/gpio-keys 23:KEY_SPACE 24:KEY_F2 25:KEY_UP &
  * GPIO25 (header pin 22) is mapped to UP (which does nothing yet)
  * A convinient ground is on header pin 20.
  
-![PiClock Picture](https://raw.githubusercontent.com/n0bel/PiClock/master/Documentation/gpiobuttons.jpg)
+![PiClock Picture](https://raw.githubusercontent.com/stacywebb/piclock/master/Documentation/gpiobuttons.jpg)
 
 
 ## Schematic of all connections
 
 For those that want to work from a schematic, I threw together a simple one
 
-![PiClock Picture](https://raw.githubusercontent.com/n0bel/PiClock/master/Documentation/Hardware_Schematic.png)
+![PiClock Picture](https://raw.githubusercontent.com/stacywebb/piclock/master/Documentation/Hardware_Schematic.png)
 
 
 
