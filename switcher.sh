@@ -1,4 +1,4 @@
-cd $HOME/PiClock
+cd $HOME/piclock
 pkill -HUP -f PyQtPiClock.py
 cd Clock
 if [ "$DISPLAY" = "" ]
