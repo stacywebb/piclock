@@ -1,10 +1,10 @@
 #!/bin/bash
-# Startup script for the PiClock
+# Startup script for the piclock
 #
-# Designed to be started from PiClock.desktop (autostart)
+# Designed to be started from piclock.desktop (autostart)
 #
 # or alternatively from crontab as follows
-#@reboot sh /home/pi/PiClock/startup.sh
+#@reboot sh /home/pi/piclock/startup.sh
 
 #
 cd $HOME/PiClock
@@ -34,8 +34,8 @@ fi
 if [ "$1" = "-m" -o "$1" = "--message-delay" ]
 then
 	MSG="echo Waiting $2 seconds for response before starting"
-	#DELAY="xmessage -buttons Now:0,Cancel:1 -default Now -timeout $2 Starting PiClock in $2 seconds"
-	DELAY='zenity --question --title PiClock --ok-label=Now --cancel-label=Cancel --timeout '$2' --text "Starting PiClock in '$2' seconds" >/dev/null 2>&1'
+	#DELAY="xmessage -buttons Now:0,Cancel:1 -default Now -timeout $2 Starting piclock in $2 seconds"
+	DELAY='zenity --question --title PiClock --ok-label=Now --cancel-label=Cancel --timeout '$2' --text "Starting piclock in '$2' seconds" >/dev/null 2>&1'
 	shift
 	shift
 fi
@@ -45,12 +45,12 @@ eval $DELAY
 if [ $? -eq 1 ]
 then
 	
-	echo "PiClock Cancelled"
+	echo "piclock Cancelled"
 	exit 0
 fi
 
-#xmessage -timeout 5 Starting PiClock....... &
-zenity --info --timeout 3 --text "Starting PiClock......." >/dev/null 2>&1 &
+#xmessage -timeout 5 Starting piclock....... &
+zenity --info --timeout 3 --text "Starting piclock......." >/dev/null 2>&1 &
 
 # stop screen blanking
 echo "Disabling screen blanking...."
@@ -115,7 +115,7 @@ fi
 cd Clock
 if [ "$1" = "-s" -o "$1" = "--screen-log" ]
 then
-  echo "Starting PiClock.... logging to screen."
+  echo "Starting piclock.... logging to screen."
   python -u PyQtPiClock.py
 else
   # create a new log file name, max of 7 log files
