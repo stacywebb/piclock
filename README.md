@@ -10,8 +10,7 @@
 - Google Maps API
 - NOAA Weather Audio Stream
   
-![PiClock Picture](https://github.com/stacywebb/piclock/blob/master/Pictures/20141227_174953.jpg)
-
+![PiClock Picture](https://github.com/stacywebb/piclock/blob/master/Pictures/piclock_1.jpg)
 
 ##### Overview
 
