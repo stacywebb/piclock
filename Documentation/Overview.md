@@ -1,8 +1,8 @@
-# Overview of the PiClock
+# Overview of the piclock
 
 ## Introduction
 
-The PiClock is a clock, weather forcast, and radar map display
+The piclock is a clock, weather forcast, and radar map display
 based on the Raspberry Pi and a display monitor. The display monitor is
 assumed to be an HDMI monitor, but it will probably (possibly) work with
 the composite output as well, but this is not a design goal.  The main
@@ -15,7 +15,7 @@ Google Maps API.   **You must get an API Key from weather
 underground in order to make this work.**  It is free for low
 usage such as this application.
 
-The PiClock can be customized with several supported additional things:
+The piclock can be customized with several supported additional things:
   * RGB LED strips (NeoPixel) to create an ambilight effect
   * gpio buttons for changing the view
   * IR Remote Control for changing the view
@@ -24,14 +24,14 @@ The PiClock can be customized with several supported additional things:
 The power usage I've measured is about 35watts with a 19" HDMI Monitor, 27 LEDs and the Pi.
 The LEDs contributed 3 or so watts, and I think the Pi is about 2-3 Watts normally.
 
-This is the basic PiClock, with some options added.
-![PiClock Picture](https://raw.githubusercontent.com/stacywebb/piclock/master/Pictures/piclock_1.jpg)
+This is the basic piclock, with some options added.
+![piclock Picture](https://raw.githubusercontent.com/stacywebb/piclock/master/Pictures/piclock_1.jpg)
 
 
 
 ## List of materials
 
-So what do you need to build a PiClock?
+So what do you need to build a piclock?
 
   * A Raspberry Pi (revision 2) Model B, or B+, Pi 2 Model B or Pi 3 Model B
   * A Display Monitor & Cable
